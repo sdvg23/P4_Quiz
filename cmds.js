@@ -135,11 +135,9 @@ exports.testCmd = (rl, id) => {
             rl.question(colorize(`${quiz.question} `, 'red'), answer => {
                 let answ = answer.toLowerCase().trim();      //Quito los espacios en blanco a der. e izq. del string answer y paso a minúsculas
                 if(answ === quiz.answer.toLowerCase()){     //Comparo con la respuesta pasada a minúsculas también
-                    log('Su respuesta es: ');
-                    biglog('CORRECTA', 'green');
+                    log('Su respuesta es correcta.');
                 } else {
-                    log('Su respuesta es: ');
-                    biglog('INCORRECTA', 'red');
+                    log('Su respuesta es incorrecta.');
                 }
                 rl.prompt();
             });
@@ -183,14 +181,12 @@ exports.playCmd = rl => {
             rl.question(colorize(`${quiz.question} `, 'red'), answer => {
                 let answ = answer.toLowerCase().trim();                         
                 if(answ === quiz.answer.toLowerCase()){                         
-                    log('Su respuesta es: ');
-                    biglog('CORRECTA', 'green');
+                    log('Su respuesta es correcta.');
                     score++;
                     log(`Lleva ${score} aciertos.`);
                     playOne();
                 } else {
-                    log('Su respuesta es: ');
-                    biglog('INCORRECTA', 'red');
+                    log('Su respuesta es incorrecta.');
                     log('Fin del examen. Aciertos: ');
                     biglog(score);
                     rl.prompt();
@@ -208,7 +204,7 @@ exports.playCmd = rl => {
 */
 exports.creditsCmd = rl => {
     log('Autores de la práctica', 'blue');
-    log('Sara del Viso González', 'green');
+    log('sdvg23', 'green');
     rl.prompt();
 };
 
