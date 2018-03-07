@@ -204,7 +204,7 @@ exports.playCmd = rl => {
 */
 exports.creditsCmd = rl => {
     log('Autores de la práctica', 'blue');
-    log('sdvg23', 'green');
+    log('sdvg23 SARA', 'green');
     rl.prompt();
 };
 
