@@ -255,7 +255,6 @@ exports.playCmd = rl => {
         let tBRl = toBeResolved.length;
         models.quiz.findOne({order: [['id', 'DESC']]})
         .then (lastid => {
-            log(toBeResolved);
             tBRl = lastid.get('id');
             const playOne = () => {
                 if (toBeResolved.length <= 0){
@@ -284,8 +283,8 @@ exports.playCmd = rl => {
                             .then(a => {
                                 let answ = a.toLowerCase().trim();      //Quito los espacios en blanco a der. e izq. del string answer y paso a minúsculas
                                 if(answ === quiz.answer.toLowerCase()){                         
-                                    log(`Su respuesta es correcta. Lleva ${score} aciertos.`);
                                     score++;
+                                    log(`Su respuesta es correcta. Lleva ${score} aciertos.`);
                                     playOne();
                                 } else {
                                     log(`Su respuesta es incorrecta. Fin del examen. Aciertos: ${score}`);
