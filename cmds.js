@@ -259,9 +259,7 @@ exports.playCmd = rl => {
             tBRl = lastid.get('id');
             const playOne = () => {
                 if (toBeResolved.length <= 0){
-                log('No hay nada más que preguntar.');
-                log('Fin del examen. Aciertos: ');
-                biglog(score, 'magenta');
+                log(`No hay nada más que preguntar. Fin del examen. Aciertos: ${score}`);
                 rl.prompt();
                 } else {
                     const findId = () => {                         //función que devuelve un valor random que esté en el array {0-tamaño array}
@@ -286,14 +284,11 @@ exports.playCmd = rl => {
                             .then(a => {
                                 let answ = a.toLowerCase().trim();      //Quito los espacios en blanco a der. e izq. del string answer y paso a minúsculas
                                 if(answ === quiz.answer.toLowerCase()){                         
-                                    log('Su respuesta es correcta.');
+                                    log(`Su respuesta es correcta. Lleva ${score} aciertos.`);
                                     score++;
-                                    log(`Lleva ${score} aciertos.`);
                                     playOne();
                                 } else {
-                                    log('Su respuesta es incorrecta.');
-                                    log('Fin del examen. Aciertos: ');
-                                    biglog(score);
+                                    log(`Su respuesta es incorrecta. Fin del examen. Aciertos: ${score}`);
                                     rl.prompt();
                                 }
                             });
