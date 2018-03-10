@@ -284,10 +284,10 @@ exports.playCmd = rl => {
                                 let answ = a.toLowerCase().trim();      //Quito los espacios en blanco a der. e izq. del string answer y paso a minúsculas
                                 if(answ === quiz.answer.toLowerCase()){                         
                                     score++;
-                                    log(`Su respuesta es correcta. Lleva ${score} aciertos.`);
+                                    console.log(`Respuesta correcta. Lleva ${score} aciertos.`);
                                     playOne();
                                 } else {
-                                    log(`Su respuesta es incorrecta. Fin del examen. Aciertos: ${score}`);
+                                    console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
                                     rl.prompt();
                                 }
                             });
