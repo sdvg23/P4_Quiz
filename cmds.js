@@ -258,7 +258,8 @@ exports.playCmd = rl => {
             tBRl = lastid.get('id');
             const playOne = () => {
                 if (toBeResolved.length <= 0){
-                log(`No hay nada más que preguntar. Fin del examen. Aciertos: ${score}`);
+                log(`No hay nada más que preguntar. Fin del examen. Aciertos: `);
+                log(score);
                 rl.prompt();
                 } else {
                     const findId = () => {                         //función que devuelve un valor random que esté en el array {0-tamaño array}
@@ -287,7 +288,8 @@ exports.playCmd = rl => {
                                     console.log(`Respuesta correcta. Lleva ${score} aciertos.`);
                                     playOne();
                                 } else {
-                                    console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
+                                    console.log(`Respuesta incorrecta. Fin del examen. Aciertos: `);
+                                    console.log(score);
                                     rl.prompt();
                                 }
                             });
