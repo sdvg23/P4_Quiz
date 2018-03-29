@@ -33,7 +33,7 @@ sequelize.sync()
     }
 })
 .catch(error => {
-    console.log(error);
+    log(error);
 });
 
 module.exports = sequelize;
